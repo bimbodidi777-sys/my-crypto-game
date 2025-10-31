@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Coin Game</title>
+    <!-- Link to Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #333;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btc-image {
+            width: 250px;
+            height: 250px;
+            margin: 20px;
+            object-fit: contain;  /* Ensure the image fits properly inside the container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .game-area {
+            background-color: #222;
+            color: white;
+            width: 350px;
+            height: 250px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .coin {
+            font-size: 60px;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coin:hover {
+            transform: scale(1.2);
+        }
+
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 18px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        .cta-button:active {
+            background-color: #1e7e34;
+        }
+
+        .money-emojis {
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: #888;
+        }
+        
+        .footer a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💰 Welcome to the Crypto Coin Game 💸</h1>
+
+    <!-- Bitcoin Image Section -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1024px-Bitcoin.svg.png" alt="Bitcoin Logo" class="btc-image">
+
+    <!-- Game Area with Coins -->
+    <div class="game-area">
+        <div class="coin" onclick="collectCoin()">💰</div>
+        <p id="score" style="font-size: 24px; position: absolute; bottom: 20px; color: #fff;">Coins Collected: 0</p>
+    </div>
+
+    <!-- Money Emojis -->
+    <p class="money-emojis">💸💰💸</p>
+    
+    <!-- CTA Button -->
+    <a href="https://scandindex.com/" class="cta-button">If you want to learn more about trade, click here</a>
+
+    <!-- Footer with Additional Info -->
+    <div class="footer">
+        <p>Powered by <a href="https://scandindex.com/" target="_blank">Scandindex</a></p>
+    </div>
+
+    <!-- JavaScript for Coin Collection Game -->
+    <script>
+        let score = 0;
+
+        function collectCoin() {
+            score++;
+            document.getElementById("score").innerText = `Coins Collected: ${score}`;
+            let coin = document.querySelector(".coin");
+            coin.style.top = Math.random() * 150 + "px";
+            coin.style.left = Math.random() * 250 + "px";
+        }
+    </script>
+
+</body>
+</html>
